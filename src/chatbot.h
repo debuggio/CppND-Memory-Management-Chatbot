@@ -29,14 +29,19 @@ public:
 
     //// STUDENT CODE
     ////
-
+    ChatBot(const ChatBot &source);
+    ChatBot(ChatBot &&source);
+    ChatBot &operator=(const ChatBot &source);
+    ChatBot &operator=(ChatBot &&source);
     ////
     //// EOF STUDENT CODE
 
     // getters / setters
     void SetCurrentNode(GraphNode *node);
     void SetRootNode(GraphNode *rootNode) { _rootNode = rootNode; }
+    GraphNode* GetRootNode() { return _rootNode; }
     void SetChatLogicHandle(ChatLogic *chatLogic) { _chatLogic = chatLogic; }
+    ChatLogic* GetChatLogic() { return _chatLogic; }
     wxBitmap *GetImageHandle() { return _image; }
 
     // communication
