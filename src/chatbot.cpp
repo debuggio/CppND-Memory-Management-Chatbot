@@ -87,6 +87,10 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
 
     if (this != &source)
     {
+        if (_image)
+        {
+            delete _image;
+        }
         _image = new wxBitmap(*source._image);
         _currentNode = source._currentNode;
         _rootNode = source._rootNode;
